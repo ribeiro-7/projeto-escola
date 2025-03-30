@@ -18,8 +18,8 @@ class Curso(models.Model):
         ('A', 'Avançado')
     )
 
-    codigo_curso = models.CharField(max_length=10)
-    descricao = models.CharField(max_length=100)
+    codigo_curso = models.CharField(max_length=10, default='')
+    descricao = models.CharField(max_length=100, default='')
     nivel = models.CharField(max_length=1, choices=NIVEL, blank=False, null=False, default='B')
 
     def __str__(self):

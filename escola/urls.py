@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from cursos.views import CursosViewSet, AlunoViewSet
+from cursos.views import CursoViewSet, AlunoViewSet
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register('cursos', CursosViewSet, basename='cursos')
+router.register('cursos', CursoViewSet, basename='cursos')
 router.register('Alunos', AlunoViewSet, basename='Alunos')
 
 urlpatterns = [
