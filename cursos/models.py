@@ -1,37 +1,26 @@
 from django.db import models
 
-
-class Base(models.Model):
-    criacao = models.DateField(auto_now_add=True)
-    atualizacao = models.DateField(auto_now_add=True)
-    ativo = models.BooleanField(default=True)
-
-    class Meta:
-        abstract = True
-
-class Curso(Base):
-    titulo = models.CharField(max_length=255)
-    url = models.URLField(unique=True)
-
-    class Meta:
-        verbose_name = 'Curso'
-        verbose_name_plural = 'Cursos'
+class Aluno(models.Model):
+    
+    nome = models.CharField(max_length=30)
+    rg = models.CharField(max_length=9)
+    cpf = models.CharField(max_length=11)
+    data_nascimento = models.DateField()
 
     def __str__(self):
-        return self.titulo
+        return self.nome
     
 
-class Avaliacao(Base):
-    curso = models.ForeignKey(Curso, related_name='avaliacoes', on_delete=models.CASCADE)
-    nome = models.CharField(max_length=255)
-    email = models.EmailField()
-    comentario = models.TextField(blank=True, default='')
-    avaliacao = models.DecimalField(max_digits=3, decimal_places=1)
+class Curso(models.Model):
+    NIVEL = (
+        ('B', 'Básico'),
+        ('I', 'Intermediário'),
+        ('A', 'Avançado')
+    )
 
-    class Meta:
-        verbose_name = 'Avaliação'
-        verbose_name_plural = 'Avaliações'
-        unique_together = ['email', 'curso']
-    
+    codigo_curso = models.CharField(max_length=10)
+    descricao = models.CharField(max_length=100)
+    nivel = models.CharField(max_length=1, choices=NIVEL, blank=False, null=False, default='B')
+
     def __str__(self):
-        return f'{self.nome} avaliou o curso {self.curso} com nota {self.avaliacao}'
+        return self.descricao
