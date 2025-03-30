@@ -14,7 +14,7 @@ class CursoViewSet(viewsets.ModelViewSet):
 
 class MatriculaViewSet(viewsets.ModelViewSet):
 
-    queryset = Matricula.objaects.all()
+    queryset = Matricula.objects.all()
     serializer_class = MatriculaSerializer
 
 class ListaMatriculasAluno(generics.ListAPIView):
