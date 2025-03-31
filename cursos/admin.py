@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import Curso, Aluno, Matricula
 
 class Alunos(admin.ModelAdmin):
-    list_display = ('id', 'nome', 'rg', 'cpf', 'data_nascimento')
-    list_display_links = ('id', 'nome')
+    list_display = ('id', 'nome', 'email', 'rg', 'cpf', 'data_nascimento')
+    list_display_links = ('id', 'nome', 'email')
     search_fields = ('nome',)
     list_per_page = 20
 
