@@ -11,8 +11,9 @@ class AlunoViewSet(viewsets.ModelViewSet):
     serializer_class = AlunoSerializer
     authentication_classes = [BasicAuthentication]
     permission_classes = [IsAuthenticated]
-    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = ['nome']
+    search_fields = ['nome', 'cpf']
 
 class CursoViewSet(viewsets.ModelViewSet):
     
