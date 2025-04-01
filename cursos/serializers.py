@@ -10,7 +10,7 @@ class AlunoSerializer(serializers.ModelSerializer):
 
     def validate(self, data):
         if not cpf_valido(data['cpf']):
-            raise serializers.ValidationError({'cpf':"O CPF deve conter 11 dígitos numéricos."})
+            raise serializers.ValidationError({'cpf':"O CPF que você digitou é inválido."})
         if not nome_valido(data['nome']):
             raise serializers.ValidationError({'nome': "O nome precisa conter somente letras."})
         if not rg_valido(data['rg']):
