@@ -1,5 +1,8 @@
+from validate_docbr import CPF
+
 def cpf_valido(numero_cpf):
-    return len(numero_cpf) == 11 and numero_cpf.isdigit()
+    cpf = CPF()
+    return cpf.validate(numero_cpf)
 
 def nome_valido(nome):
     return all(part.isalpha() for part in nome.split())
