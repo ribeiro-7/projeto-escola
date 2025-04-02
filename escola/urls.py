@@ -29,5 +29,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('aluno/<int:pk>/matriculas/', ListaMatriculasAluno.as_view()),
-    path('curso/<int:pk>/matriculas/', ListaAlunosMatriculados.as_view())
+    path('curso/<int:pk>/matriculas/', ListaAlunosMatriculados.as_view()),
 ]
