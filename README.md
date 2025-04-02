@@ -7,6 +7,7 @@ Este é um projeto de API REST desenvolvido com Django Rest Framework que simula
 - Python  
 - Django  
 - Django Rest Framework   
+- SQLite
 
 ## 📁 Models
 - **Alunos**: Nome, E-mail, RG, CPF, Data de Nascimento.  
