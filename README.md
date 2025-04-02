@@ -6,8 +6,7 @@ Este é um projeto de API REST desenvolvido com Django Rest Framework que simula
 ## 🚀 Tecnologias Utilizadas
 - Python  
 - Django  
-- Django Rest Framework  
-- PostgreSQL (ou outro banco de dados de sua escolha)  
+- Django Rest Framework   
 
 ## 📁 Models
 - **Alunos**: Nome, E-mail, RG, CPF, Data de Nascimento.  
