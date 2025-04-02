@@ -21,6 +21,9 @@ Este é um projeto de API REST desenvolvido com Django Rest Framework que simula
 ## 📌 Endpoints
 
 ### Endpoints Alunos
+- Funções de Filtros:
+  - Ordenação por nome: Ascendente ou Descendente.
+  - Filtragem pelo campo de pesquisa: Filtrar alunos por nome ou CPF digitado no campo.
 - `GET /alunos/` - Lista todos os alunos registrados divididos em páginas (10 alunos por página).
 - `POST /alunos/` - Cria um novo aluno. **Validações:**  
   - Nome: Deve conter apenas letras.  
